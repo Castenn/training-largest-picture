@@ -26,7 +26,7 @@ public class PicturesController {
     @SneakyThrows
     @GetMapping("/{sol}/largest")
     public ResponseEntity<?> getLargestImage(@PathVariable("sol") long sol) {
-        var url = picturesService.printLargestPicture(API_KEY, sol);
+        var url = picturesService.getLargestPictureUrl(API_KEY, sol);
         return ResponseEntity.status(HttpStatus.PERMANENT_REDIRECT).location(URI.create(url)).build();
     }
 
